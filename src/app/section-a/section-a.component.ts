@@ -40,38 +40,17 @@ export class SectionAComponent implements OnInit {
     this.Form1.reset();
   }
 
-  getNewId(){
-    const oldRecords = localStorage.getItem('aaa');
-    if (oldRecords !== null){
-      const todoList = JSON.parse(oldRecords);
-      return todoList.length+1;
-    }else{
-      return 1;
-    }
-  }
+
 
   onAdd(){
-    const latsetId = this.getNewId();
-    this.Form1.value.id  = latsetId;
-    const oldRecords = localStorage.getItem('aaa');
+
     if (this.Form1.valid){
       confirm("Submitted Successfully!");
       console.log(this.Form1.value);
-      localStorage.setItem('id',JSON.stringify(latsetId));
-      if (oldRecords !== null){
-        const formList = JSON.parse(oldRecords);
-        formList.push(this.Form1.value);
-        localStorage.setItem('aaa',JSON.stringify(formList));
-      }else{
-        const formArr = [];
-        formArr.push(this.Form1.value);
-        localStorage.setItem('aaa',JSON.stringify(formArr));
-      }
     }
     else{
      confirm("Please enter the required fields!");
      console.log(this.Form1.value);
-
     }
   }
 

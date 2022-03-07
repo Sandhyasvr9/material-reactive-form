@@ -93,22 +93,10 @@ export class SectionBComponent implements OnInit {
       confirm("Submitted Successfully!");
       //console.log(this.form2.value);
       const latsetId = localStorage.getItem('id');
-      const resId1 = JSON.parse(latsetId);
-      const resId = resId1-1;
-      const oldRecords = localStorage.getItem('aaa');
-      if (oldRecords !== null){
-        let formList = JSON.parse(oldRecords);
-        console.log(formList[resId]);
-        formList = [formList[resId],this.form2.value];
-        console.log(formList)
-        localStorage.setItem('aaa',JSON.stringify(formList));
-
+      console.log(this.form2.value);
       }
-    }
     else{
       confirm("Please enter the required fields!");
-      const latsetId = localStorage.getItem('id')
-      console.log(latsetId)
     }
   }
 

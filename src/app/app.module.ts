@@ -16,7 +16,6 @@ import { SectionAComponent } from './section-a/section-a.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SectionBComponent } from './section-b/section-b.component';
-import { FormListComponent } from './form-list/form-list.component';
 
 
 @NgModule({
@@ -26,7 +25,6 @@ import { FormListComponent } from './form-list/form-list.component';
     HomeComponent,
     NotFoundComponent,
     SectionBComponent,
-    FormListComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +39,6 @@ import { FormListComponent } from './form-list/form-list.component';
       {path:'',component:HomeComponent},
       {path:'sectionA',component:SectionAComponent},
       {path:'sectionB',component:SectionBComponent},
-      {path:'form',component:FormListComponent},
       {path:'**',component:NotFoundComponent},
     ])
   ],
