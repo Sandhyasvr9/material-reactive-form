@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" >
+      <h4>List of Patient’s who filled form-F</h4>
+      <p *ngIf="resFormList.length == 0 else elseBlock"></p>
+      <ng-template #elseBlock>
+        <div *ngFor="let item of resFormList" class="list-container">
+        <p>Name and complete address of Genetic Clinic/Ultrasound Clinic/Imaging Centre: <span>{{item.nameandAddress}}</span></p>
+        <p>Registration No. (Under PC&PNDT Act, 1994): <span>{{item.regdNo}}</span></p>
+        <p>Patient's name: <span>{{item.patientname}}</span></p>
+        <p>Age: <span>{{item.age}}</span></p>
+        <p>Total Number of living children: <span>{{item.childrenGroup.noOfChildren}}</span></p>
+        <ul>
+          <li>Number of living Sons with age of each living son (in years or months): <span>{{item.childrenGroup.livingSons}}</span></li>
+          <li>Number of living Daughters with age of each living daughter (in years or months): <span>{{item.childrenGroup.livingDaughters}}</span></li>
+        </ul>
+        <p>Husband's/Wife's/Father's/Mother's Name: <span>{{item.otherName}}</span></p>
+        <p>FullpostaladdressofthepatientwithContactNumber,ifany: <span>{{item.postalAddress}}</span></p>
+        <p>Referrals</p>
+        <ul>
+          <li>Referred by (Full name and address of Doctor(s)/ Genetic Counselling Centre) : <span>{{item.referral.referredBy}}</span></li>
+          <li>Self-Referral by Gynaecologists/Radiologists/Registered Medical Practitioner conducting the diagnostic procedures: <span>{{item.referral.selfReferral}}</span> </li>
+        </ul>
+        <p>Last menstrual period or weeks of pregnancy: <span>{{item.lastDate}}</span></p>
+      </div>
+         </ng-template>
+    </div>
+  </div>
+</div>
